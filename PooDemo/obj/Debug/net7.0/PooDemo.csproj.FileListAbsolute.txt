@@ -1,0 +1,14 @@
+c:\Users\abgonzalez\C#\PooDemo\bin\Debug\net7.0\PooDemo.exe
+c:\Users\abgonzalez\C#\PooDemo\bin\Debug\net7.0\PooDemo.deps.json
+c:\Users\abgonzalez\C#\PooDemo\bin\Debug\net7.0\PooDemo.runtimeconfig.json
+c:\Users\abgonzalez\C#\PooDemo\bin\Debug\net7.0\PooDemo.dll
+c:\Users\abgonzalez\C#\PooDemo\bin\Debug\net7.0\PooDemo.pdb
+c:\Users\abgonzalez\C#\PooDemo\obj\Debug\net7.0\PooDemo.GeneratedMSBuildEditorConfig.editorconfig
+c:\Users\abgonzalez\C#\PooDemo\obj\Debug\net7.0\PooDemo.AssemblyInfoInputs.cache
+c:\Users\abgonzalez\C#\PooDemo\obj\Debug\net7.0\PooDemo.AssemblyInfo.cs
+c:\Users\abgonzalez\C#\PooDemo\obj\Debug\net7.0\PooDemo.csproj.CoreCompileInputs.cache
+c:\Users\abgonzalez\C#\PooDemo\obj\Debug\net7.0\PooDemo.dll
+c:\Users\abgonzalez\C#\PooDemo\obj\Debug\net7.0\refint\PooDemo.dll
+c:\Users\abgonzalez\C#\PooDemo\obj\Debug\net7.0\PooDemo.pdb
+c:\Users\abgonzalez\C#\PooDemo\obj\Debug\net7.0\PooDemo.genruntimeconfig.cache
+c:\Users\abgonzalez\C#\PooDemo\obj\Debug\net7.0\ref\PooDemo.dll
