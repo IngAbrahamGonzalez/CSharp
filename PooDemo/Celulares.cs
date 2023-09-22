@@ -70,6 +70,9 @@ IPHONE14.Bateria ="Carga rápida 18W e inalámbrica MagSafe 15W, Conexión Light
 IPHONE14.Otros = "WiFi 6, 5G, BT 5.2, NFC, GPS, dualSIM, eSIM, altavoces estéreo Dolby Atmos, reconocimiento facial, resistencia al agua IP68";
 IPHONE14.LogoMarca = true;
 
+string resultTomarSelfies = VIVOV25.TomarSelfies();
+Console.WriteLine(resultTomarSelfies);
+
 
 List<Car> IphoneCar = new List<Car>();
 IphoneCar.Add(iphone14);
@@ -82,6 +85,8 @@ VivoCar.Add(vivoV25);
 VIVOV25.caracteristicas = VivoCar;
 string resultCaracteristicas1 = VIVOV25.VerCaracteristicas();
 Console.WriteLine(resultCaracteristicas1);
+string resultTomarFotos = VIVOV25.TomarFotos();
+Console.WriteLine(resultTomarFotos);
 
 List<Car> XperiaCar = new List<Car>();
 XperiaCar.Add(XPERIASP);

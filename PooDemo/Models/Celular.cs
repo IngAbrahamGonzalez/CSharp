@@ -3,11 +3,11 @@ using PooDemo.Models;
 
 namespace PooDemo.Models
 {
-        class Cel 
+        class Cel : Dispositivos
     {
         private string _Nombre;
         public int Id;
-        public string Nombre 
+        public override string Nombre 
         {
             get  
             {
@@ -55,6 +55,11 @@ namespace PooDemo.Models
                 sb.AppendLine($"{NombreYColor} Tiene las siguientes caracteristicas: {item.Pa}, {item.P}, {item.Al}, {item.R}, {item.CamaraFrontal}, {item.N}, {item.S} ");
             }
             return sb.ToString();
+        }
+
+        public override string TomarFotos()
+        {
+            return $"{Nombre} Tiene una camara perfecta para tomar selfies";
         }
     }
 
