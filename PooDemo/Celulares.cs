@@ -1,11 +1,35 @@
 ﻿using System.Security.Cryptography;
 using System.Text;
+using PooDemo.Models;
 
-var IPHONE14 = new Celular();
-var VIVOV25 = new Celular();
+var IPHONE14 = new Cel();
+var VIVOV25 = new Cel();
+var XperiaSP = new Cel();
+
+var XperiaSp= new Descontinuados();
+XperiaSp.Id = 3;
+XperiaSp.Nombre = "Xperia SP";
+XperiaSp.Color = "Negro";
+XperiaSp.Dimensiones = "130.6x67.1x10 milímetros -- 155 gramos.";
+XperiaSp.NoDeBotones = 3;
+XperiaSp.CarCamaraF = "2 megapixeles";
+XperiaSp.CarCamaraT = "Cámara trasera de 8 megapíxeles, sensor Exmor RS; frontal VGA (640x480 píxeles)";
+XperiaSp.Bateria = "Batería de 2.370 mAh";
+XperiaSp.Otros = "NFC y LTE. El modelo que nosotros probamos era el C5303 compatible con las bandas 800/850/900/1800/2100 y 2600.";
+XperiaSp.LogoMarca = true;
+
+var XPERIASP = new Car();
+XPERIASP.Pa = Pantalla.Pantalla4inch;
+XPERIASP.P = Procesador.Qualcomm;
+XPERIASP.Al = Almacenamiento.Almacenamiento8Gb;
+XPERIASP.R = RAM.RAM1Gb;
+XPERIASP.CamaraFrontal = true;
+XPERIASP.N = CamarasTraseras.NumeroDeCamaras1;
+XPERIASP.S = Software.Andorid;
 
 
-var vivoV25 = new Caracteristicas();
+
+var vivoV25 = new Car();
 vivoV25.Pa = Pantalla.Pantalla6inch;
 vivoV25.P = Procesador.MediaTek;
 vivoV25.Al = Almacenamiento.Almacenamiento256Gb;
@@ -14,7 +38,7 @@ vivoV25.CamaraFrontal = true;
 vivoV25.N = CamarasTraseras.NumeroDeCamaras3;
 vivoV25.S = Software.Andorid;
 
-var iphone14 = new Caracteristicas();
+var iphone14 = new Car();
 iphone14.Pa = Pantalla.Pantalla6inch;
 iphone14.P = Procesador.Apple;
 iphone14.Al = Almacenamiento.Almacenamiento128Gb;
@@ -24,8 +48,8 @@ iphone14.N = CamarasTraseras.NumeroDeCamaras2;
 iphone14.S = Software.IOS;
 
 
-VIVOV25.Id|= 1;
-VIVOV25.Nombre = "Vivo 25e";
+VIVOV25.Id = 1;
+VIVOV25.Nombre = "   Vivo 25e    ";
 VIVOV25.Color = "Gris";
 VIVOV25.Dimensiones = "162.51 x 75.81 x 7.80 mm -- 186 gramos";
 VIVOV25.NoDeBotones = 3;
@@ -47,76 +71,34 @@ IPHONE14.Otros = "WiFi 6, 5G, BT 5.2, NFC, GPS, dualSIM, eSIM, altavoces estére
 IPHONE14.LogoMarca = true;
 
 
-List<Caracteristicas> IphoneCar = new List<Caracteristicas>();
+List<Car> IphoneCar = new List<Car>();
 IphoneCar.Add(iphone14);
 IPHONE14.caracteristicas = IphoneCar;
 string resultCaracteristicas = IPHONE14.VerCaracteristicas();
 Console.WriteLine(resultCaracteristicas);
 
-List<Caracteristicas> VivoCar = new List<Caracteristicas>();
+List<Car> VivoCar = new List<Car>();
 VivoCar.Add(vivoV25);
 VIVOV25.caracteristicas = VivoCar;
 string resultCaracteristicas1 = VIVOV25.VerCaracteristicas();
 Console.WriteLine(resultCaracteristicas1);
 
+List<Car> XperiaCar = new List<Car>();
+XperiaCar.Add(XPERIASP);
+XperiaSp.caracteristicas = XperiaCar;
+string resultCaracteristicas2 = XperiaSp.VerCaracteristicas();
+Console.WriteLine(resultCaracteristicas2);
+
+string accionDescontinuado = XperiaSp.AccionDescontinuado("Descontinuado");
+Console.WriteLine(accionDescontinuado);
 
 
-class Celular 
-{
-    public int Id;
-    public string Nombre;
-    public string Color;
-    public string Dimensiones;
-    public int NoDeBotones;
-    public string CarCamaraF;
-    public string CarCamaraT;
-    public string Bateria;
-    public bool LogoMarca;
-    public string Otros;
-    public List<Caracteristicas> caracteristicas;
 
-    public Celular()
-    {
-        Id = 1;
-        caracteristicas = new List<Caracteristicas>();
-        LogoMarca = false;
-    }
 
-    public String VerCaracteristicas()
-    {
-        StringBuilder sb =  new StringBuilder();
-        foreach (var item in caracteristicas)
-        {
-            sb.AppendLine($"{Nombre} Tiene las siguientes caracteristicas: {item.Pa}, {item.P}, {item.Al}, {item.R}, {item.CamaraFrontal}, {item.N}, {item.S} ");
-        }
-        return sb.ToString();
-    }
-}
-
-class Caracteristicas 
-{
-    public Pantalla Pa;
-    public Procesador P;
-    public Almacenamiento Al;
-    public RAM R;
-    public bool CamaraFrontal;
-    public CamarasTraseras N;
-    public Software S;
-
-    public Caracteristicas() 
-    {
-        Pa = Pantalla.Pantalla5inch;
-        P = Procesador.Qualcomm;
-        Al = Almacenamiento.Almacenamiento64Gb;
-        R = RAM.RAM4Gb;
-        CamaraFrontal = true;
-        N = CamarasTraseras.NumeroDeCamaras1;
-        S = Software.Andorid;
-    }
-}
 
 enum Pantalla 
 {
+    Pantalla4inch,
     Pantalla5inch,
     Pantalla6inch,
     Pantalla7inch
@@ -134,6 +116,7 @@ enum Procesador
 
 enum RAM
 {
+    RAM1Gb,
     RAM4Gb,
     RAM6Gb,
     RAM8Gb,
@@ -143,6 +126,7 @@ enum RAM
 
 enum Almacenamiento
 {
+    Almacenamiento8Gb,
     Almacenamiento64Gb, 
     Almacenamiento128Gb, 
     Almacenamiento256Gb,
