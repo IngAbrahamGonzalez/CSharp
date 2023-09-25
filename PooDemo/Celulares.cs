@@ -1,10 +1,12 @@
 ﻿using System.Security.Cryptography;
 using System.Text;
+using PooDemo;
 using PooDemo.Models;
 
 var IPHONE14 = new Cel();
 var VIVOV25 = new Cel();
 var XperiaSP = new Cel();
+var imprimirInfo = new ImprimirInfo();
 
 var XperiaSp= new Descontinuados();
 XperiaSp.Id = 3;
@@ -70,6 +72,8 @@ IPHONE14.Bateria ="Carga rápida 18W e inalámbrica MagSafe 15W, Conexión Light
 IPHONE14.Otros = "WiFi 6, 5G, BT 5.2, NFC, GPS, dualSIM, eSIM, altavoces estéreo Dolby Atmos, reconocimiento facial, resistencia al agua IP68";
 IPHONE14.LogoMarca = true;
 
+imprimirInfo.ImprimirCelular(IPHONE14);
+
 string resultTomarSelfies = VIVOV25.TomarSelfies();
 Console.WriteLine(resultTomarSelfies);
 
@@ -96,6 +100,8 @@ Console.WriteLine(resultCaracteristicas2);
 
 string accionDescontinuado = XperiaSp.AccionDescontinuado("Descontinuado");
 Console.WriteLine(accionDescontinuado);
+
+
 
 
 

@@ -1,12 +1,13 @@
 using System.Text;
+using PooDemo.Interfaces;
 using PooDemo.Models;
 
 namespace PooDemo.Models
 {
-        class Cel : Dispositivos
+        class Cel : Dispositivos , ICelulares
     {
         private string _Nombre;
-        public int Id;
+        public int Id {get; set;}
         public override string Nombre 
         {
             get  
@@ -29,8 +30,9 @@ namespace PooDemo.Models
         }
 
 
-
         public string Color;
+        string ICelulares.NombreYColor { get; set; }
+
         public string Dimensiones;
         public int NoDeBotones;
         public string CarCamaraF;
@@ -59,7 +61,13 @@ namespace PooDemo.Models
 
         public override string TomarFotos()
         {
-            return $"{Nombre} Tiene una camara perfecta para tomar selfies";
+            return $"{Nombre} Tiene una camara perfecta para tomar Fotos";
+        }
+
+        public override string TomarSelfies()
+        {
+            //return base.TomarSelfies();
+            return $"{Nombre} Tiene una excelente camara para tomar selfies";
         }
     }
 
